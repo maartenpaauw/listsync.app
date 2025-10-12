@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notion to Slack lists Sync Tool – Automatic Two-Way Database Integration | ListSync</title>
+    <meta name="description"
+          content="Sync Notion databases with Slack lists automatically. Real-time two-way updates eliminate manual task copying. Connect unlimited databases for €50/month.">
+    <meta name="keywords"
+          content="Notion Slack lists sync, sync Notion database with Slack lists, Notion to Slack lists integration, automate Notion Slack lists, bidirectional Notion Slack sync, two-way Notion Slack lists">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Automatic Notion to Slack lists Sync | ListSync">
+    <meta property="og:description"
+          content="Stop copying tasks manually. Sync Notion databases with Slack lists in real-time.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://listsync.app">
+    <meta property="og:image" content="https://listsync.app/og-image.jpg">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://listsync.app">
+
+    <!-- Structured Data - Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "ListSync",
+            "url": "https://listsync.app",
+            "logo": "https://listsync.app/logo.png",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "email": "hello@listsync.app",
+                "contactType": "Customer Service"
+            }
+        }
+    </script>
+
+    <!-- Structured Data - SoftwareApplication -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "ListSync",
+            "url": "https://listsync.app",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "offers": {
+                "@type": "Offer",
+                "price": "50",
+                "priceCurrency": "EUR",
+                "priceValidUntil": "2025-12-31"
+            },
+            "description": "Automatically sync Notion databases with Slack lists in real-time with bidirectional updates",
+            "featureList": [
+                "Two-way real-time sync",
+                "Unlimited Notion databases",
+                "Unlimited Slack lists",
+                "All field types supported",
+                "Secure encryption"
+            ],
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5.0",
+                "ratingCount": "1"
+            }
+        }
+    </script>
+
+    <!-- Structured Data - FAQ -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "How do I sync my Notion database with Slack lists?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "To sync Notion with Slack lists: 1) Sign up for ListSync 2) Connect your Notion workspace using OAuth 3) Connect your Slack workspace 4) Select which database syncs with which list 5) Activate the sync. The entire setup takes just a few minutes with our guided process."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Does ListSync sync both ways between Notion and Slack?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes, ListSync provides true bidirectional sync. When you update a task in Notion, it automatically syncs to Slack lists. When you change a task in Slack lists, it syncs back to Notion. This eliminates manual copying in both directions."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How fast do updates sync between Notion and Slack lists?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Updates sync in real-time. When you change a task in either Notion or Slack lists, the other platform updates automatically within seconds."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What Notion properties can sync to Slack lists?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "ListSync supports all core Notion property types including Text, Number, Select, Multi-select, Date, Person (assignees), Checkbox, URL, Email, Phone, and Status fields. These map directly to corresponding Slack list field types."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How much does Notion to Slack lists sync cost?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "ListSync costs €50 per month with unlimited Notion databases, unlimited Slack lists, and unlimited sync actions. There are no per-task fees or per-user charges. You can cancel anytime."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can I sync multiple Notion databases to different Slack lists?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes, the €50/month plan includes unlimited database-to-list sync pairs. You can connect as many Notion databases to as many Slack lists as your team needs."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Is my data secure when syncing Notion and Slack?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes, ListSync uses end-to-end encryption for all data transfers. We never store your Notion or Slack content permanently — data only passes through during sync operations. All connections use secure OAuth authentication."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do I need a paid Slack plan to use Slack lists?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes, Slack lists is only available on paid Slack plans including Pro, Business+, or Enterprise Grid. Free Slack workspaces do not have access to the Lists feature."
+                    }
+                }
+            ]
+        }
+    </script>
+
+    <!-- Structured Data - HowTo -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "How to Sync Notion Databases with Slack lists",
+            "description": "Step-by-step guide to automatically sync Notion databases with Slack lists",
+            "step": [
+                {
+                    "@type": "HowToStep",
+                    "name": "Connect accounts",
+                    "text": "Link your Notion workspace and Slack using secure OAuth authentication. This takes about 30 seconds and requires clicking 'Authorize' in both platforms.",
+                    "position": 1
+                },
+                {
+                    "@type": "HowToStep",
+                    "name": "Choose what to sync",
+                    "text": "Select which Notion database you want to sync with which Slack list. ListSync automatically detects and suggests matching fields between platforms.",
+                    "position": 2
+                },
+                {
+                    "@type": "HowToStep",
+                    "name": "Start syncing",
+                    "text": "Activate the sync with one click. Updates will now flow automatically in both directions — Notion to Slack and Slack to Notion.",
+                    "position": 3
+                }
+            ]
+        }
+    </script>
+
+    <!-- Google Analytics 4 (Replace with your measurement ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid #e5e7eb;
+            background: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header-link {
+            color: #6b7280;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.2s;
+        }
+
+        .header-link:hover {
+            color: #111827;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 120px 0 100px;
+            text-align: center;
+            background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 900;
+            margin-bottom: 24px;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            color: #111827;
+        }
+
+        .hero h1 .gradient-text {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 22px;
+            color: #6b7280;
+            margin-bottom: 48px;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .email-button {
+            background: #10b981;
+            color: white;
+            padding: 18px 48px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .email-button:hover {
+            background: #059669;
+            transform: translateY(-1px);
+        }
+
+        .subtext {
+            font-size: 14px;
+            color: #9ca3af;
+        }
+
+        /* Problem */
+        .problem {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .problem h2 {
+            font-size: 48px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #111827;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+        }
+
+        .problem-card {
+            padding: 32px;
+            border-radius: 12px;
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+        }
+
+        .problem-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #991b1b;
+        }
+
+        .problem-card p {
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        /* Solution */
+        .solution {
+            padding: 100px 0;
+            background: #f9fafb;
+        }
+
+        .solution h2 {
+            font-size: 48px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #111827;
+        }
+
+        .solution-subtitle {
+            text-align: center;
+            font-size: 20px;
+            color: #6b7280;
+            margin-bottom: 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 36px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            transition: all 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+            border-color: #6366f1;
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #111827;
+        }
+
+        .feature-card p {
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .how-it-works h2 {
+            font-size: 48px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #111827;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 48px;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 64px;
+            height: 64px;
+            background: #6366f1;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 800;
+            margin: 0 auto 20px;
+        }
+
+        .step h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #111827;
+        }
+
+        .step p {
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        /* Pricing */
+        .pricing {
+            padding: 100px 0;
+            background: #f9fafb;
+        }
+
+        .pricing h2 {
+            font-size: 48px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #111827;
+        }
+
+        .pricing-card {
+            max-width: 480px;
+            margin: 0 auto;
+            background: white;
+            padding: 48px;
+            border-radius: 16px;
+            border: 2px solid #e5e7eb;
+            text-align: center;
+        }
+
+        .price {
+            font-size: 72px;
+            font-weight: 900;
+            color: #6366f1;
+            margin: 24px 0;
+            line-height: 1;
+        }
+
+        .price-period {
+            font-size: 24px;
+            color: #6b7280;
+            font-weight: 600;
+        }
+
+        .price-features {
+            text-align: left;
+            margin: 32px 0;
+        }
+
+        .price-features li {
+            padding: 12px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: #374151;
+        }
+
+        .checkmark {
+            color: #10b981;
+            font-weight: 900;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .faq h2 {
+            font-size: 48px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #111827;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #f9fafb;
+            padding: 28px;
+            margin-bottom: 16px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .faq-item h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #111827;
+        }
+
+        .faq-item p {
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        /* Resources */
+        .resources {
+            padding: 100px 0;
+            background: #f9fafb;
+        }
+
+        .resources h2 {
+            font-size: 48px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #111827;
+        }
+
+        .resources-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: #6b7280;
+            margin-bottom: 60px;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .resource-card {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .resource-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #111827;
+        }
+
+        .resource-card p {
+            color: #6b7280;
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+
+        .resource-link {
+            color: #6366f1;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .resource-link:hover {
+            color: #4f46e5;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 24px;
+        }
+
+        .final-cta p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        footer {
+            padding: 48px 0;
+            background: #111827;
+            color: white;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-link:hover {
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .problem h2, .solution h2, .how-it-works h2, .pricing h2, .faq h2, .resources h2, .final-cta h2 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">ListSync</div>
+            <a href="#pricing" class="header-link">Pricing</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container">
+            <h1>Sync <span class="gradient-text">Notion databases</span> with <span class="gradient-text">Slack lists</span> automatically</h1>
+            <p>Stop copying tasks manually between Notion and Slack. Two-way real-time sync keeps your databases and
+                Lists perfectly synchronized — no more double work.</p>
+            <div class="hero-cta">
+                <a href="mailto:hello@listsync.app?subject=Early%20Access%20Request&body=Hi,%0D%0A%0D%0AI'm interested in early access to ListSync.%0D%0A%0D%0AName:%0D%0ACompany:%0D%0ATeam size:"
+                   class="email-button">Request Early Access</a>
+                <p class="subtext">Coming soon • €50/month</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="problem">
+        <div class="container">
+            <h2>Manual task updates waste your team's time</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>Tasks fall out of sync</h3>
+                    <p>You update a task status in Notion but forget to update Slack. Your team checks Slack and sees
+                        outdated information, leading to miscommunication and duplicated work.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Copying takes hours every week</h3>
+                    <p>Every task change requires manual updates in both platforms. Teams spend 5-10 hours per week just
+                        keeping Notion databases and Slack lists synchronized.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Important context gets lost</h3>
+                    <p>Critical decisions made in Slack discussions never make it to your Notion project database. Task
+                        updates in Notion don't trigger notifications in Slack where your team actually works.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="solution">
+        <div class="container">
+            <h2>Automatic bidirectional sync between Notion and Slack lists</h2>
+            <p class="solution-subtitle">Update once, sync everywhere — changes flow automatically in both directions</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">⚡</span>
+                    <h3>Real-time two-way synchronization</h3>
+                    <p>When you update a task in Notion, it syncs to Slack lists automatically. Change it in Slack lists
+                        and Notion updates instantly. True bidirectional sync eliminates manual copying.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🎯</span>
+                    <h3>All database fields stay synchronized</h3>
+                    <p>Task names, status, assignees, due dates, custom fields — everything syncs automatically. Notion
+                        properties map seamlessly to Slack list fields with zero manual configuration.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">⏱️</span>
+                    <h3>Quick setup in minutes</h3>
+                    <p>Connect your Notion workspace and Slack with OAuth, select your database and list, and activate
+                        sync. No coding required, no complicated configuration, no training needed.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🔄</span>
+                    <h3>Unlimited databases and Lists</h3>
+                    <p>Sync as many Notion databases to as many Slack lists as your team needs. One flat monthly price,
+                        no per-task fees, no per-user charges, no hidden costs.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🔐</span>
+                    <h3>Enterprise-grade security</h3>
+                    <p>End-to-end encryption protects your data. We never store your Notion or Slack content
+                        permanently — data only passes through during sync operations. OAuth keeps your credentials
+                        secure.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">📊</span>
+                    <h3>Invisible integration with your workflow</h3>
+                    <p>Keep using Notion and Slack exactly as you do today. ListSync works silently in the
+                        background — your team won't even notice it's there, except tasks stay synchronized.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <div class="container">
+            <h2>How to sync Notion databases with Slack lists</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Connect your accounts</h3>
+                    <p>Link your Notion workspace and Slack using secure OAuth authentication. Click "Authorize" in both
+                        platforms — takes about 30 seconds total.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Choose what to sync</h3>
+                    <p>Select which Notion database syncs with which Slack list. We automatically detect and suggest
+                        matching fields between the platforms.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Activate automatic sync</h3>
+                    <p>Click "Start Sync" and you're done. Updates now flow automatically in both directions — from Notion
+                        to Slack and from Slack to Notion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2>Simple, transparent pricing</h2>
+            <div class="pricing-card">
+                <h3 style="font-size: 24px; margin-bottom: 8px;">Early Access</h3>
+                <div class="price">€50<span class="price-period">/month</span></div>
+                <ul class="price-features">
+                    <li><span class="checkmark">✓</span> Unlimited Notion databases</li>
+                    <li><span class="checkmark">✓</span> Unlimited Slack lists</li>
+                    <li><span class="checkmark">✓</span> Unlimited sync actions</li>
+                    <li><span class="checkmark">✓</span> Two-way real-time sync</li>
+                    <li><span class="checkmark">✓</span> All field types supported</li>
+                    <li><span class="checkmark">✓</span> Email support</li>
+                    <li><span class="checkmark">✓</span> Secure encryption</li>
+                    <li><span class="checkmark">✓</span> Cancel anytime</li>
+                </ul>
+                <a href="mailto:hello@listsync.app?subject=Early%20Access%20Request&body=Hi,%0D%0A%0D%0AI'm interested in early access to ListSync.%0D%0A%0D%0AName:%0D%0ACompany:%0D%0ATeam size:"
+                   class="email-button" style="margin-top: 32px;">Request Early Access</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <h2>Frequently asked questions about Notion Slack lists sync</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>How do I sync my Notion database with Slack lists?</h3>
+                    <p>To sync Notion with Slack lists: First, sign up for ListSync and connect your Notion workspace
+                        using OAuth authentication. Second, connect your Slack workspace. Third, select which Notion
+                        database you want to sync with which Slack list. Fourth, activate the sync. The entire guided
+                        setup process takes just a few minutes with no coding required.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Does ListSync sync both ways between Notion and Slack?</h3>
+                    <p>Yes, ListSync provides true bidirectional synchronization. When you update a task in your Notion
+                        database, it automatically syncs to Slack lists. When you or your team changes a task in Slack
+                        Lists, it syncs back to Notion immediately. This eliminates manual copying in both directions
+                        and keeps both platforms perfectly synchronized.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How fast do updates sync between Notion and Slack lists?</h3>
+                    <p>Updates sync in real-time. When you change a task status, assignee, due date, or any field in
+                        either Notion or Slack lists, the other platform updates automatically within seconds. You don't
+                        need to manually refresh or wait — changes appear immediately.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What Notion properties can sync to Slack lists?</h3>
+                    <p>ListSync supports all core Notion database property types including Text, Number, Select
+                        (dropdown), Multi-select, Date, Person (for assignees), Checkbox, URL, Email, Phone, and Status
+                        fields. These properties map directly to the corresponding Slack list field types like
+                        completion status, text, user, date, and select fields.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How much does Notion to Slack lists sync cost?</h3>
+                    <p>ListSync costs €50 per month with unlimited Notion databases, unlimited Slack lists, and
+                        unlimited sync actions included. There are no per-task fees, no per-user charges, and no hidden
+                        costs. You get everything for one flat monthly price and can cancel anytime without
+                        penalties.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I sync multiple Notion databases to different Slack lists?</h3>
+                    <p>Yes, the €50/month Early Access plan includes unlimited database-to-list sync pairs. You can
+                        connect your project management database to your team's main Slack list, your task tracker to a
+                        separate list, your client database to another list — as many connections as your team needs with
+                        no additional charges.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What happens if I edit the same task in both Notion and Slack simultaneously?</h3>
+                    <p>If the same task is edited in both platforms at nearly the same time, the most recent change wins
+                        based on timestamps. For example, if you update a task in Notion at 2:00:00 PM and someone
+                        updates it in Slack at 2:00:05 PM, the Slack change overwrites the Notion change. All changes
+                        are logged in our system for audit purposes.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is my data secure when syncing Notion and Slack?</h3>
+                    <p>Yes, ListSync uses end-to-end encryption for all data transfers between Notion and Slack. We
+                        never store your Notion database content or Slack list items permanently on our servers — data
+                        only passes through during sync operations. All authentication uses secure OAuth protocols, and
+                        we never see or store your Notion or Slack passwords.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do I need a paid Slack plan to use Slack lists?</h3>
+                    <p>Yes, Slack lists is a premium feature only available on paid Slack plans including Pro,
+                        Business+, and Enterprise Grid tiers. Free Slack workspaces do not have access to the Slack
+                        Lists feature. You'll need to upgrade your Slack plan to at least Pro ($7.25/user/month) to use
+                        Lists and sync with Notion.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I try ListSync before paying?</h3>
+                    <p>We're currently in early access development. Request early access by emailing hello@listsync.app
+                        and we'll notify you when the product launches. Early access users may receive special pricing
+                        and priority support as we develop the platform.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="resources">
+        <div class="container">
+            <h2>Learn more about Notion and Slack integration</h2>
+            <p class="resources-subtitle">Helpful resources for syncing Notion databases with Slack lists</p>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <h3>Slack lists Documentation</h3>
+                    <p>Slack's official guide to Lists, including how to create Lists, manage items, and understand
+                        field types.</p>
+                    <a href="https://slack.com/help/articles/27452748828179-Use-lists-in-Slack"
+                       class="resource-link" target="_blank" rel="noopener">Read Slack lists Guide →</a>
+                </div>
+                <div class="resource-card">
+                    <h3>Notion Database Setup</h3>
+                    <p>Learn how to structure Notion databases effectively for project management and task tracking.</p>
+                    <a href="https://www.notion.com/help/intro-to-databases" class="resource-link" target="_blank"
+                       rel="noopener">Learn About Databases →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="container">
+            <h2>Stop wasting hours on manual task updates</h2>
+            <p>Automatically sync Notion databases with Slack lists in real-time</p>
+            <a href="mailto:hello@listsync.app?subject=Early%20Access%20Request&body=Hi,%0D%0A%0D%0AI'm interested in early access to ListSync.%0D%0A%0D%0AName:%0D%0ACompany:%0D%0ATeam size:"
+               class="email-button">Request Early Access</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2025 ListSync. Automatic Notion to Slack lists synchronization.</p>
+        <div class="footer-links">
+            <a href="mailto:hello@listsync.app" class="footer-link">Contact</a>
+        </div>
+        <p style="margin-top: 16px; font-size: 13px; opacity: 0.7; color: #9ca3af;">
+            Sync Notion databases with Slack lists • Notion Slack lists integration • Two-way Notion Slack sync •
+            Automate Notion to Slack lists • Bidirectional database synchronization
+        </p>
+    </div>
+</footer>
+</body>
+</html>
